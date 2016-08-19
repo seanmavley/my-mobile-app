@@ -1,15 +1,15 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {DetailPage} from '../detail/detail';
-import {ArticlePage} from '../article/article';
 
 @Component({
-  templateUrl: 'build/pages/home/home.html'
+  templateUrl: 'build/pages/doctors/doctors.html'
 })
-export class HomePage {
+export class DoctorsPage {
   constructor(private navCtrl: NavController) {
   }
-  detailPage() {
-    this.navCtrl.push(ArticlePage);
+
+  doctorDetail() {
+    this.navCtrl.push(DetailPage);
   }
 }

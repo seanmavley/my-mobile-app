@@ -3,22 +3,18 @@
         <button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>Tips</ion-title>
+        <ion-title>About our Doctors</ion-title>
     </ion-navbar>
 </ion-header>
 <ion-content>
     <ion-list>
-        <button ion-item (click)="detailPage();">
+        <button ion-item (click)="doctorDetail()">
             <ion-thumbnail item-left>
                 <img src="img/avatar-cher.png">
             </ion-thumbnail>
-            <h2>Title of Article</h2>
-            <h3>My Neighbor Totoro</h3>
-            <p>
-                • Description of Article</p>
-            <p>
-                DateStamp
-            </p>
+            <h2>Doctor Name</h2>
+            <h3>Qualification</h3>
+            <p>About description here</p>
             <button clear item-right>View</button>
         </button>
     </ion-list>

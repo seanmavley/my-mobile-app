@@ -1,17 +1,24 @@
+<style type="text/css">
+.logoArea {
+    min-height: 150px;
+    padding: 20px;
+    background-color: grey;
+}
+</style>
 <ion-menu [content]="content">
-
-  <ion-toolbar>
-    <ion-title>Menu</ion-title>
-  </ion-toolbar>
-
-  <ion-content>
-    <ion-list>
-      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
-    </ion-list>
-  </ion-content>
-
+    <ion-toolbar class="logoArea">
+        <img src="img/avatar-cher.png">
+    </ion-toolbar>
+    <ion-content>
+        <ion-list>
+            <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+                {{p.title}}
+            </button>
+        </ion-list>
+    </ion-content>
+    <ion-toolbar position="bottom">
+        <button clear (click)="showFeedback()">
+            <ion-icon name="mail"></ion-icon>Send feedback</button>
+    </ion-toolbar>
 </ion-menu>
-
-<ion-nav id="nav" [root]="rootPage" #content swipe-back-enabled="false"></ion-nav>
+<ion-nav id="nav" #nav [root]="rootPage" #content swipe-back-enabled="true"></ion-nav>
