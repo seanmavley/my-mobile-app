@@ -3,27 +3,23 @@
         <button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>Article Detail</ion-title>
+        <ion-title [innerHTML]="post.title"></ion-title>
     </ion-navbar>
 </ion-header>
 <ion-content>
     <ion-card>
         <img src="img/nin-live.png" />
         <ion-card-content>
-            <ion-card-title>
-              Article Title
-            </ion-card-title>
-            <p>
-                Article content
-            </p>
+            <ion-card-title [innerHTML]="post.title"></ion-card-title>
+            <div [innerHTML]="post.content"></div>
         </ion-card-content>
-            <button clear>
+            <button clear (click)="openUrl(post.url);">
                 <ion-icon name="contact"></ion-icon>
                 Read online
             </button>            
-            <button clear>
+            <!-- <button clear>
                 <ion-icon name="logo-whatsapp"></ion-icon>
                 Share
-            </button>            
+            </button>  -->           
     </ion-card>
 </ion-content>

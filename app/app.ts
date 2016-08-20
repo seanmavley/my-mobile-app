@@ -6,10 +6,12 @@ import {HomePage} from './pages/home/home';
 import {DoctorsPage} from './pages/doctors/doctors';
 import {FeedbackPage} from './pages/feedback/feedback';
 import {AboutPage} from './pages/about/about';
+import {RssService} from './providers/rss-service/rss-service';
+
 
 @Component({
   templateUrl: 'build/app.html',
-  providers: [NavController]
+  providers: [NavController, RssService]
 })
 export class MyApp {
   @ViewChild('nav') nav : NavController;

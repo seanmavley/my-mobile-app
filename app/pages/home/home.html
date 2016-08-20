@@ -7,19 +7,18 @@
     </ion-navbar>
 </ion-header>
 <ion-content>
+    <div class="spinner" *ngIf="!posts.length">
+        <ion-spinner></ion-spinner>
+    </div>
     <ion-list>
-        <button ion-item (click)="detailPage();">
+        <button ion-item (click)="detailPage(post);" *ngFor="let post of posts" text-wrap>
             <ion-thumbnail item-left>
-                <img src="img/avatar-cher.png">
+                <img [src]="post.thumbnail" *ngIf="post.thumbnail">
             </ion-thumbnail>
-            <h2>Title of Article</h2>
-            <h3>My Neighbor Totoro</h3>
-            <p>
-                • Description of Article</p>
-            <p>
-                DateStamp
-            </p>
-            <button clear item-right>View</button>
+            <h2 [innerHTML]="post.title"></h2>
+            <h3 [innerHTML]="post.author.name"></h3>
+            <div [innerHTML]="post.date"></div>
+            <button clear item-right><ion-icon name="arrow-forward"></ion-icon></button>
         </button>
     </ion-list>
 </ion-content>
