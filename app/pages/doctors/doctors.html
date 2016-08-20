@@ -7,15 +7,20 @@
     </ion-navbar>
 </ion-header>
 <ion-content>
+    <div class="spinner" *ngIf="!doctors.length">
+        <ion-spinner></ion-spinner>
+    </div>
     <ion-list>
-        <button ion-item (click)="doctorDetail()">
+        <button ion-item (click)="detailPage(doctor);" *ngFor="let doctor of doctors">
             <ion-thumbnail item-left>
-                <img src="img/avatar-cher.png">
+                <img [src]="doctor.thumbnail">
             </ion-thumbnail>
-            <h2>Doctor Name</h2>
-            <h3>Qualification</h3>
-            <p>About description here</p>
-            <button clear item-right>View</button>
+            <h2 [innerHTML]="doctor.name"></h2>
+            <h3 [innerHTML]="doctor.company"></h3>
+            <p [innerHTML]="doctor.about"></p>
+            <button clear item-right>
+                <ion-icon name="arrow-forward"></ion-icon>
+            </button>
         </button>
     </ion-list>
 </ion-content>

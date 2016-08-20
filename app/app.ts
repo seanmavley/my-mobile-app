@@ -7,11 +7,11 @@ import {DoctorsPage} from './pages/doctors/doctors';
 import {FeedbackPage} from './pages/feedback/feedback';
 import {AboutPage} from './pages/about/about';
 import {RssService} from './providers/rss-service/rss-service';
-
+import {DoctorService} from './providers/doctor-service/doctor-service';
 
 @Component({
   templateUrl: 'build/app.html',
-  providers: [NavController, RssService]
+  providers: [NavController, RssService, DoctorService]
 })
 export class MyApp {
   @ViewChild('nav') nav : NavController;
@@ -27,7 +27,7 @@ export class MyApp {
     this.pages = [
         { title: 'Home', component: HomePage },
         { title: 'Doctors', component: DoctorsPage },
-        { title: 'About Bisa', component: AboutPage }
+        { title: 'About App', component: AboutPage }
     ];
     this.rootPage = TabsPage;
 

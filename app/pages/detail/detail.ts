@@ -1,19 +1,17 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
-/*
-  Generated class for the DetailPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   templateUrl: 'build/pages/detail/detail.html',
 })
 export class DetailPage {
-
-  constructor(private navCtrl: NavController) {
-
+  private doctor: any[]
+  constructor(private navCtrl: NavController, public params: NavParams) {
+    this.doctor = this.params.get('doctor');
   }
+
+  openUrl(url) {
+    window.open(url);
+  };
 
 }

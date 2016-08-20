@@ -3,29 +3,29 @@
         <button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>Detail Page</ion-title>
+        <ion-title>{{ doctor.name }}</ion-title>
     </ion-navbar>
 </ion-header>
 <ion-content>
     <ion-card>
-        <img src="img/nin-live.png" />
+        <img [src]="doctor.photo" />
         <ion-card-content>
             <ion-card-title>
-                {{ post.title }}
+                {{ doctor.name }}
             </ion-card-title>
             <p>
-                Description about Doctor. The most popular industrial group ever, and largely responsible for bringing the music to a mass audience.
+                {{ doctor.about }}
             </p>
         </ion-card-content>
-            <button clear>
+            <button clear (click)="openUrl(doctor.social.website)">
                 <ion-icon name="contact"></ion-icon>
                 Website
             </button>            
-            <button clear>
+            <button clear (click)="openUrl(doctor.social.facebook)">
                 <ion-icon name="logo-facebook"></ion-icon>
                 Facebook
             </button>            
-            <button clear>
+            <button clear (click)="openUrl(doctor.social.google)">
                 <ion-icon name="logo-googleplus"></ion-icon>
                 Google+
             </button>

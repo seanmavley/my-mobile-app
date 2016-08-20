@@ -3,9 +3,9 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
-export class RssService {
+export class DoctorService {
 
-  url = 'https://blog.khophi.co/api/get_recent_posts/'
+  url = 'data/doctors.json'
   constructor(private http: Http) {
     this.http = http;
   }
@@ -13,8 +13,7 @@ export class RssService {
   load() {
     return this.http.get(this.url)
       .map(res => res.json())
-      .map(data => data.posts);
+      .map(data => data);
   }
-
 }
 
