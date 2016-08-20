@@ -3,15 +3,13 @@ import {Platform, ionicBootstrap, MenuController, NavController, ModalController
 import {StatusBar} from 'ionic-native';
 import {TabsPage} from './pages/tabs/tabs';
 import {HomePage} from './pages/home/home';
-import {DoctorsPage} from './pages/doctors/doctors';
 import {FeedbackPage} from './pages/feedback/feedback';
 import {AboutPage} from './pages/about/about';
 import {RssService} from './providers/rss-service/rss-service';
-import {DoctorService} from './providers/doctor-service/doctor-service';
 
 @Component({
   templateUrl: 'build/app.html',
-  providers: [NavController, RssService, DoctorService]
+  providers: [NavController, RssService]
 })
 export class MyApp {
   @ViewChild('nav') nav : NavController;
@@ -26,10 +24,10 @@ export class MyApp {
     this.menu = menu;
     this.pages = [
         { title: 'Home', component: HomePage },
-        { title: 'Doctors', component: DoctorsPage },
         { title: 'About App', component: AboutPage }
     ];
     this.rootPage = TabsPage;
+    // this.rootPage = FeedbackPage;
 
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -39,7 +37,6 @@ export class MyApp {
   };
 
   showFeedback() {
-    console.log('showing feedback');
     let modal = this.modal.create(FeedbackPage);
     modal.present();
   };

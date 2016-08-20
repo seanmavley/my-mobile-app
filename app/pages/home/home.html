@@ -3,7 +3,12 @@
         <button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>Tips</ion-title>
+        <ion-title>Home</ion-title>
+        <ion-buttons end>
+            <button outline (click)="openUrl('http://blog.khophi.co')">
+                Visit Website
+            </button>
+        </ion-buttons>
     </ion-navbar>
 </ion-header>
 <ion-content>
@@ -18,7 +23,9 @@
             <h2 [innerHTML]="post.title"></h2>
             <h3 [innerHTML]="post.author.name"></h3>
             <div [innerHTML]="post.date"></div>
-            <button clear item-right><ion-icon name="arrow-forward"></ion-icon></button>
+            <button clear item-right>
+                <ion-icon name="arrow-forward"></ion-icon>
+            </button>
         </button>
     </ion-list>
 </ion-content>

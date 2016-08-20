@@ -8,7 +8,7 @@
 </ion-header>
 <ion-content>
     <ion-card>
-        <img src="img/nin-live.png" />
+        <img [src]="post.thumbnail_images.medium.url" *ngIf="post.thumbnail_images" />
         <ion-card-content>
             <ion-card-title [innerHTML]="post.title"></ion-card-title>
             <div [innerHTML]="post.content"></div>
